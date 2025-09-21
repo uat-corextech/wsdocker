@@ -1,21 +1,21 @@
 <?php
-include 'config.php';
+require_once 'config.php';
 
-$result = $conn->query("SELECT * FROM users");
+$query = "SELECT * FROM users";
+$users  = $conn->query($query);
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Sample Website</title>
 </head>
 <body>
-    <h1>Users List</h1>
+    <h1>List of Users V1</h1>
     <ul>
-        <?php
-        while($row = $result->fetch_assoc()) {
-            echo "<li>" . $row['name'] . " (" . $row['email'] . ")</li>";
-        }
-        ?>
+        <?php foreach ($users as $user): ?>
+            <li><?= htmlspecialchars($user['name']) ?> (<?= htmlspecialchars($user['email']) ?>)</li>
+        <?php endforeach; ?>
     </ul>
 </body>
 </html>

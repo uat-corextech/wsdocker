@@ -1,0 +1,22 @@
+<?php
+include 'config.php';
+
+$result = $conn->query("SELECT * FROM users");
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample Website</title>
+</head>
+<body>
+    <h1>Users List V2</h1>
+    <ul>
+        <?php
+        while($row = $result->fetch_assoc()) {
+            echo "<li>" . $row['name'] . " (" . $row['email'] . ")</li>";
+        }
+        ?>
+    </ul>
+</body>
+</html>
+
