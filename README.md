@@ -40,7 +40,7 @@ wsdocker/
 ### 1. Clone Repository
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/uat-corextech/wsdocker.git
 cd wsdocker
 ```
 
