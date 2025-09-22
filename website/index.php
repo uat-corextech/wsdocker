@@ -11,7 +11,7 @@ $users  = $conn->query($query);
     <title>Sample Website</title>
 </head>
 <body>
-    <h1>List of Users V3</h1>
+    <h1>Testing v10</h1>
     <ul>
         <?php foreach ($users as $user): ?>
             <li><?= htmlspecialchars($user['name']) ?> (<?= htmlspecialchars($user['email']) ?>)</li>
